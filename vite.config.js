@@ -6,4 +6,7 @@ import react from "@vitejs/plugin-react";
 // inside src/utils/pdfParser.js (see that file for details).
 export default defineConfig({
   plugins: [react()],
+  // Relative asset paths. Required so the built app works both on Vercel
+  // AND when loaded from a chrome-extension:// URL inside the extension.
+  base: "./",
 });
